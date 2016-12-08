@@ -8,11 +8,11 @@ import sys
 
 
 # Global Const
-VSF_MAIL_FROM = os.environ['VSF_MAIL_FROM']
-VSF_SMTP_HOST = os.environ['VSF_SMTP_HOST']
-VSF_SMTP_PORT = os.environ['VSF_SMTP_PORT']
-VSF_SMTP_USER = os.environ['VSF_SMTP_USER']
-VSF_SMTP_PASSWORD = os.environ['VSF_SMTP_PASSWORD']
+ROBOT_MAIL_FROM = os.environ['ROBOT_MAIL_FROM']
+ROBOT_SMTP_HOST = os.environ['ROBOT_SMTP_HOST']
+ROBOT_SMTP_PORT = os.environ['ROBOT_SMTP_PORT']
+ROBOT_SMTP_USER = os.environ['ROBOT_SMTP_USER']
+ROBOT_SMTP_PASSWORD = os.environ['ROBOT_SMTP_PASSWORD']
 
 
 def get_xlsx_file(target_url):
@@ -57,13 +57,13 @@ def sendmail(recievers, target_urls=[]):
         multipart_msg.attach(part)
 
     # Do send
-    s = smtplib.SMTP(VSF_SMTP_HOST, VSF_SMTP_PORT)
+    s = smtplib.SMTP(ROBOT_SMTP_HOST, ROBOT_SMTP_PORT)
     server = s
     server.ehlo()
     server.starttls()
     s.set_debuglevel(1)
-    s.login(VSF_SMTP_USER, VSF_SMTP_PASSWORD)
-    s.sendmail(VSF_MAIL_FROM, reciever_list, multipart_msg.as_string())
+    s.login(ROBOT_SMTP_USER, ROBOT_SMTP_PASSWORD)
+    s.sendmail(ROBOT_MAIL_FROM, reciever_list, multipart_msg.as_string())
 
 def parse_params():
     target_urls = sys.argv[1:-1]
