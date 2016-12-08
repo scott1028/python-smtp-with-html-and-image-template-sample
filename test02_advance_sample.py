@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
+# ex: ./getReportAndMail.py "http://127.0.0.1:5000/embed/query/10/visualization/12?api_key=3123123123" "scott@aaa.com;scott@bbb.com"
 
 import os
 import urllib2
