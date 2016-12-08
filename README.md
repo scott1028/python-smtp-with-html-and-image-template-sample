@@ -9,3 +9,5 @@
 ![Alt text](https://raw.githubusercontent.com/scott1028/python-smtp-with-html-and-image-template-sample/master/send_with_multipart_files.jpg "send_with_multipart_files.jpg")
 
 ![Alt text](https://raw.githubusercontent.com/scott1028/python-smtp-with-html-and-image-template-sample/master/send_with_multipart_excel_file.jpg "send_with_multipart_excel_file.jpg")
+
+![Alt text](https://raw.githubusercontent.com/scott1028/python-smtp-with-html-and-image-template-sample/master/mail_information_config.jpg "mail_information_config.jpg")
