@@ -46,6 +46,9 @@ def sendmail(recievers, target_urls=[]):
 
     # Content Part
     multipart_msg = MIMEMultipart()
+    multipart_msg['Subject'] = "Auto Report System"
+    multipart_msg['From'] = ROBOT_MAIL_FROM
+    multipart_msg['To'] = 'aa@taisys.com,bb@taisys.com,cc@taisys.com'  # 可以造假
     multipart_msg.attach(MIMEText('Sent by auto-report-robot.'))
 
     # Attachment Part
