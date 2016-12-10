@@ -23,7 +23,8 @@ def get_xlsx_file(target_url):
     table_index = re.search('.*?visualization.*?"id": (?P<id>.*?),', tmp).group('id').decode('unicode-escape')
     result_index = re.search('.*?query_result.*id": (?P<id>.*?)}', tmp).group('id')
     api_key = re.search('.*?api_key=(?P<api_key>.*)', target_url).group('api_key')
-    url = 'http://192.168.1.170:5000/api/queries/%(table_index)s/results/%(result_index)s.xlsx?api_key=%(api_key)s' % {
+    host = re.search('(?P<host>.*?//.*?)/', url).group('host')
+    url = host + '/api/queries/%(table_index)s/results/%(result_index)s.xlsx?api_key=%(api_key)s' % {
         'title': title,
         'table_index': table_index,
         'result_index': result_index,
